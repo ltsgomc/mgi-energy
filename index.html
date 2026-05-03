@@ -333,13 +333,14 @@
       transform: translateY(-2px);
     }
 
-    /* hero side stats */
+    /* hero side stats — fixed bottom bar, no overlap with buttons */
     .hero-stats {
       position: absolute;
       right: 5%;
-      bottom: 10%;
+      bottom: 3rem;
       display: flex;
-      gap: 2.5rem;
+      gap: 1.2rem;
+      flex-wrap: nowrap;
       animation: fadeUp 0.7s 0.5s ease both;
     }
 
@@ -372,10 +373,10 @@
       margin-top: 4px;
     }
 
-    /* scroll indicator */
+    /* scroll indicator — pinned bottom-left, stats are bottom-right, no overlap */
     .scroll-hint {
       position: absolute;
-      bottom: 2.5rem;
+      bottom: 2rem;
       left: 5%;
       display: flex;
       align-items: center;
@@ -384,6 +385,7 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--gray-mid);
+      max-width: 200px;
     }
 
     .scroll-line {
@@ -1205,8 +1207,19 @@
   
 
     /* ══════════════════════════════════════════════════════════
-       INDEX PAGE — RESPONSIVE MEDIA QUERIES (clean, complete)
+       INDEX PAGE — RESPONSIVE MEDIA QUERIES
     ══════════════════════════════════════════════════════════ */
+
+    /* ── 1280px: constrain logo so it doesn't crowd content ── */
+    @media (max-width: 1280px) {
+      .hero-logo-3d { width: 240px; }
+      .hero-visual::before { width: 310px; height: 310px; }
+      .hero-visual::after  { width: 380px; height: 380px; }
+      .hero-visual { right: 4%; }
+      .hero-stats { right: 3%; bottom: 2.5rem; gap: 1rem; }
+      .hstat { padding: 0.85rem 1.1rem; }
+      .hstat-num { font-size: 2rem; }
+    }
 
     /* ── 1024px: tablet landscape ─────────────────────────── */
     @media (max-width: 1024px) {
@@ -1215,103 +1228,80 @@
       .why-sticky { position: static; }
       .stats-strip { flex-wrap: wrap; }
       .stat-item { flex: 0 0 50%; border-right: 1px solid rgba(30,136,229,0.1); border-bottom: 1px solid rgba(30,136,229,0.1); }
+      /* logo smaller, stats stay bottom bar */
       .hero-visual { right: 3%; }
-      .hero-visual::before { width: 300px; height: 300px; }
-      .hero-visual::after  { width: 360px; height: 360px; }
-      .hero-logo-3d { width: 220px; }
-      .hero-stats { gap: 1rem; right: 3%; }
-      .hstat { padding: 0.9rem 1.1rem; }
-      .hstat-num { font-size: 1.9rem; }
+      .hero-logo-3d { width: 190px; }
+      .hero-visual::before { width: 260px; height: 260px; }
+      .hero-visual::after  { width: 320px; height: 320px; }
+      .hero-stats { right: 3%; bottom: 2rem; gap: 0.8rem; }
+      .hstat { padding: 0.75rem 1rem; }
+      .hstat-num { font-size: 1.75rem; }
     }
 
-    /* ── 900px: tablet portrait ───────────────────────────── */
+    /* ── 900px: tablet portrait — hide logo, reflow stats ─── */
     @media (max-width: 900px) {
-      /* Hero: stack content + logo vertically */
-      .hero { min-height: 100vh; padding-top: 88px; display: flex; flex-direction: column; justify-content: flex-start; padding-bottom: 2rem; }
-      .hero-content { max-width: 100%; padding-right: 0; padding-top: 2rem; }
-      .hero-visual {
-        position: relative; right: auto; top: auto;
-        transform: none; perspective: 1000px;
-        display: flex; justify-content: center;
-        margin: 2rem auto 0;
-        width: 100%;
-      }
-      .hero-visual::before { width: 260px; height: 260px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
-      .hero-visual::after  { width: 320px; height: 320px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
-      .hero-logo-3d { width: 200px; }
+      /* Hero layout */
+      .hero { min-height: 100vh; padding-top: 88px; padding-bottom: 9rem; }
+      .hero-content { max-width: 100%; }
 
-      /* Hero stats: move below logo, horizontal scroll row */
+      /* Hide 3D logo completely */
+      .hero-visual { display: none !important; }
+
+      /* Stats: pull out of absolute, flow as bottom row */
       .hero-stats {
-        position: relative; right: auto; bottom: auto;
-        display: flex; flex-wrap: wrap; justify-content: center;
-        gap: 0.8rem; margin: 2rem 0 1rem; animation: none; opacity: 1;
+        left: 4%; right: 4%; bottom: 1.8rem;
+        gap: 0.7rem; flex-wrap: nowrap; justify-content: space-between;
       }
-      .hstat { padding: 0.85rem 1.2rem; flex: 0 0 auto; }
-      .hstat-num { font-size: 1.7rem; }
+      .hstat { padding: 0.75rem 0.8rem; flex: 1 1 0; min-width: 0; }
+      .hstat-num { font-size: 1.5rem; }
+      .hstat-label { font-size: 0.62rem; }
 
-      /* Scroll hint hide on mobile */
       .scroll-hint { display: none; }
+      .hero-orb { width: 380px; height: 380px; right: -80px; }
 
-      /* Hero orb & stripe — scale down */
-      .hero-orb { width: 400px; height: 400px; right: -60px; }
-
-      /* Sectors: stack left text above cards */
+      /* Sectors */
       .sectors-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .sector-cards { grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-      /* Services: 2 cols */
+      /* Services 2 col */
       .services-grid { grid-template-columns: 1fr 1fr; }
 
-      /* Clients: 2 cols */
+      /* Clients 2 col */
       .clients-grid { grid-template-columns: 1fr 1fr; }
 
-      /* CTA band */
+      /* CTA */
       .cta-inner { flex-direction: column; gap: 1.5rem; }
       .cta-actions { align-items: flex-start; }
     }
 
     /* ── 600px: large phone ───────────────────────────────── */
     @media (max-width: 600px) {
-      .hero { padding-top: 80px; }
-      .hero-title { font-size: clamp(2.6rem, 9vw, 3.6rem); }
-      .hero-desc { font-size: 0.95rem; max-width: 100%; }
+      .hero { padding-top: 80px; padding-bottom: 8rem; }
+      .hero-title { font-size: clamp(2.4rem, 9vw, 3.4rem); }
+      .hero-desc { font-size: 0.93rem; max-width: 100%; }
       .hero-buttons { flex-direction: column; gap: 0.75rem; }
       .hero-buttons a, .hero-buttons button { width: 100%; text-align: center; justify-content: center; display: flex; }
-      .hero-logo-3d { width: 170px; }
-      .hero-visual::before { width: 220px; height: 220px; }
-      .hero-visual::after  { width: 270px; height: 270px; }
 
-      /* Stats: 2 per row */
-      .hero-stats { gap: 0.6rem; }
-      .hstat { padding: 0.75rem 1rem; flex: 0 0 calc(50% - 0.3rem); }
-      .hstat-num { font-size: 1.55rem; }
-      .hstat-label { font-size: 0.65rem; }
+      /* Stats: 2-per-row wrap */
+      .hero-stats { flex-wrap: wrap; justify-content: flex-start; gap: 0.6rem; bottom: 1.5rem; }
+      .hstat { flex: 0 0 calc(50% - 0.3rem); padding: 0.7rem 0.9rem; }
+      .hstat-num { font-size: 1.45rem; }
+      .hstat-label { font-size: 0.62rem; }
 
-      /* Services: 1 col */
       .services-grid { grid-template-columns: 1fr; }
-
-      /* Sector cards: 1 col */
       .sector-cards { grid-template-columns: 1fr; gap: 0.8rem; }
-
-      /* Clients 1 col */
       .clients-grid { grid-template-columns: 1fr; }
-
-      /* Stats strip */
       .stat-item { flex: 0 0 50%; }
-
-      /* CTA */
       .cta-band { padding: 3.5rem 4%; }
       .btn-white { width: 100%; justify-content: center; }
     }
 
     /* ── 420px: small phone ───────────────────────────────── */
     @media (max-width: 420px) {
-      .hero-title { font-size: clamp(2.2rem, 8.5vw, 2.8rem); }
-      .hero-logo-3d { width: 140px; }
-      .hero-visual::before { width: 185px; height: 185px; }
-      .hero-visual::after  { width: 230px; height: 230px; }
-      .hstat { flex: 0 0 calc(50% - 0.3rem); padding: 0.65rem 0.7rem; }
-      .hstat-num { font-size: 1.3rem; }
+      .hero-title { font-size: clamp(2rem, 8.5vw, 2.6rem); }
+      .hero-desc { font-size: 0.88rem; }
+      .hstat { flex: 0 0 calc(50% - 0.3rem); padding: 0.6rem 0.65rem; }
+      .hstat-num { font-size: 1.25rem; }
       .stat-item { flex: 0 0 100%; }
     }
 
@@ -1403,7 +1393,7 @@
 
 <!-- ═══════════════════════════════ NAVBAR ═════════════════════════════════ -->
 <nav>
-  <a href="index.html" class="nav-logo">
+  <a href="#" class="nav-logo">
     <img src="LOGO_.png" alt="MGI Energy" class="nav-logo-img" />
     <span class="nav-logo-text">MGI <span>ENERGY</span></span>
   </a>
@@ -1872,7 +1862,7 @@
 <footer>
   <div class="footer-top">
     <div>
-      <a href="index.html" class="nav-logo" style="text-decoration:none;">
+      <a href="#" class="nav-logo" style="text-decoration:none;">
         <img src="LOGO_.png" alt="MGI Energy" class="nav-logo-img" />
         <span class="nav-logo-text">MGI <span style="color:var(--orange)">ENERGY</span></span>
       </a>
