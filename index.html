@@ -1203,29 +1203,118 @@
       margin: 0;
     }
   
+
+    /* ══════════════════════════════════════════════════════════
+       INDEX PAGE — RESPONSIVE MEDIA QUERIES (clean, complete)
+    ══════════════════════════════════════════════════════════ */
+
+    /* ── 1024px: tablet landscape ─────────────────────────── */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: 1fr 1fr; }
-      .why-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-      .stats-strip { flex-wrap: wrap; gap: 0; }
-      .stat-item { flex: 0 0 50%; border-right: none; }
+      .why-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .why-sticky { position: static; }
+      .stats-strip { flex-wrap: wrap; }
+      .stat-item { flex: 0 0 50%; border-right: 1px solid rgba(30,136,229,0.1); border-bottom: 1px solid rgba(30,136,229,0.1); }
+      .hero-visual { right: 3%; }
+      .hero-visual::before { width: 300px; height: 300px; }
+      .hero-visual::after  { width: 360px; height: 360px; }
+      .hero-logo-3d { width: 220px; }
+      .hero-stats { gap: 1rem; right: 3%; }
+      .hstat { padding: 0.9rem 1.1rem; }
+      .hstat-num { font-size: 1.9rem; }
     }
+
+    /* ── 900px: tablet portrait ───────────────────────────── */
     @media (max-width: 900px) {
-      .sectors-layout { grid-template-columns: 1fr; }
+      /* Hero: stack content + logo vertically */
+      .hero { min-height: 100vh; padding-top: 88px; display: flex; flex-direction: column; justify-content: flex-start; padding-bottom: 2rem; }
+      .hero-content { max-width: 100%; padding-right: 0; padding-top: 2rem; }
+      .hero-visual {
+        position: relative; right: auto; top: auto;
+        transform: none; perspective: 1000px;
+        display: flex; justify-content: center;
+        margin: 2rem auto 0;
+        width: 100%;
+      }
+      .hero-visual::before { width: 260px; height: 260px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+      .hero-visual::after  { width: 320px; height: 320px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+      .hero-logo-3d { width: 200px; }
+
+      /* Hero stats: move below logo, horizontal scroll row */
+      .hero-stats {
+        position: relative; right: auto; bottom: auto;
+        display: flex; flex-wrap: wrap; justify-content: center;
+        gap: 0.8rem; margin: 2rem 0 1rem; animation: none; opacity: 1;
+      }
+      .hstat { padding: 0.85rem 1.2rem; flex: 0 0 auto; }
+      .hstat-num { font-size: 1.7rem; }
+
+      /* Scroll hint hide on mobile */
+      .scroll-hint { display: none; }
+
+      /* Hero orb & stripe — scale down */
+      .hero-orb { width: 400px; height: 400px; right: -60px; }
+
+      /* Sectors: stack left text above cards */
+      .sectors-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .sector-cards { grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+      /* Services: 2 cols */
+      .services-grid { grid-template-columns: 1fr 1fr; }
+
+      /* Clients: 2 cols */
       .clients-grid { grid-template-columns: 1fr 1fr; }
+
+      /* CTA band */
+      .cta-inner { flex-direction: column; gap: 1.5rem; }
+      .cta-actions { align-items: flex-start; }
     }
+
+    /* ── 600px: large phone ───────────────────────────────── */
     @media (max-width: 600px) {
-      .hero-title { font-size: clamp(2.8rem, 10vw, 4.5rem); }
-      .hero-buttons { flex-direction: column; }
-      .hero-buttons a, .hero-buttons button { width: 100%; text-align: center; justify-content: center; }
+      .hero { padding-top: 80px; }
+      .hero-title { font-size: clamp(2.6rem, 9vw, 3.6rem); }
+      .hero-desc { font-size: 0.95rem; max-width: 100%; }
+      .hero-buttons { flex-direction: column; gap: 0.75rem; }
+      .hero-buttons a, .hero-buttons button { width: 100%; text-align: center; justify-content: center; display: flex; }
+      .hero-logo-3d { width: 170px; }
+      .hero-visual::before { width: 220px; height: 220px; }
+      .hero-visual::after  { width: 270px; height: 270px; }
+
+      /* Stats: 2 per row */
+      .hero-stats { gap: 0.6rem; }
+      .hstat { padding: 0.75rem 1rem; flex: 0 0 calc(50% - 0.3rem); }
+      .hstat-num { font-size: 1.55rem; }
+      .hstat-label { font-size: 0.65rem; }
+
+      /* Services: 1 col */
       .services-grid { grid-template-columns: 1fr; }
+
+      /* Sector cards: 1 col */
+      .sector-cards { grid-template-columns: 1fr; gap: 0.8rem; }
+
+      /* Clients 1 col */
       .clients-grid { grid-template-columns: 1fr; }
+
+      /* Stats strip */
+      .stat-item { flex: 0 0 50%; }
+
+      /* CTA */
+      .cta-band { padding: 3.5rem 4%; }
+      .btn-white { width: 100%; justify-content: center; }
+    }
+
+    /* ── 420px: small phone ───────────────────────────────── */
+    @media (max-width: 420px) {
+      .hero-title { font-size: clamp(2.2rem, 8.5vw, 2.8rem); }
+      .hero-logo-3d { width: 140px; }
+      .hero-visual::before { width: 185px; height: 185px; }
+      .hero-visual::after  { width: 230px; height: 230px; }
+      .hstat { flex: 0 0 calc(50% - 0.3rem); padding: 0.65rem 0.7rem; }
+      .hstat-num { font-size: 1.3rem; }
       .stat-item { flex: 0 0 100%; }
-      .stats-strip .divider-v { display: none; }
     }
-    @media (max-width: 480px) {
-      .hero { padding: 90px 3% 60px; }
-      .hero-desc { font-size: 0.95rem; }
-    }
+
 
     /* ══════════════════════════════════
        MOBILE HAMBURGER NAV
