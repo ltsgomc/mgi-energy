@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us — MGI Energy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=36zZ5xREOSK6g5_ZLRMZM39cn2zc96uNW9K0VliZ0HEFI_EfyUcYuULjBq-JwAPsorLANnKNK4lTAo2oXw9pHNrFDZQU-Z-0O7CvZy3fPbdyqaAMeSLOqXgFmS8zQQOCzu6E-3TGKcuyG8lmCtkBDIbXqxgrFFl887MV_40X6UyPhE1vR95HyDNas1waETVzsUzsCUt6h12t7W4V9wlXjlpD8GoNYPzUxUEK_ppfZOjFkOU27iH6qED4yXMkwO6y5oQ-n7ayhd0sAZbyo04dvw" charset="UTF-8"></script><style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --blue-deep:    #041D3A;
+      --blue-mid:     #0A3D6B;
+      --blue-bright:  #1565C0;
+      --blue-light:   #1E88E5;
+      --blue-glow:    #42A5F5;
+      --orange:       #F47820;
+      --orange-light: #FF9A45;
+      --orange-deep:  #C95E00;
+      --cyan:         #29BCD4;
+      --white:        #FFFFFF;
+      --gray-light:   #B0BEC5;
+      --gray-mid:     #546E7A;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--blue-deep);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top:0; width:100%; z-index:200;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 5%; height:72px;
+      background:rgba(4,29,58,0.92); backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(30,136,229,0.18);
+    }
+    .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav-logo-img { height:46px; width:46px; object-fit:contain; border-radius:8px; background:#fff; padding:3px; box-shadow:0 0 18px rgba(244,120,32,0.3); }
+    .nav-logo-text { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--white); }
+    .nav-logo-text span { color:var(--orange); }
+    .nav-links { display:flex; align-items:center; gap:2.2rem; list-style:none; }
+    .nav-links a { text-decoration:none; font-size:0.82rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray-light); transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--orange-light); }
+    .nav-cta { background:linear-gradient(135deg,var(--orange),var(--orange-light)); color:#fff !important; padding:0.5rem 1.4rem; border-radius:5px; font-weight:600 !important; box-shadow:0 4px 15px rgba(244,120,32,0.35); }
+    .nav-cta:hover { transform:translateY(-1px); box-shadow:0 6px 22px rgba(244,120,32,0.5) !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      position:relative; min-height:52vh;
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:100px 5% 4rem; overflow:hidden;
+    }
+    .page-hero-bg {
+      position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 70% 80% at 60% 40%, rgba(21,101,192,0.28) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(244,120,32,0.10) 0%, transparent 55%),
+        linear-gradient(160deg, var(--blue-deep) 0%, #040F20 60%, #020810 100%);
+    }
+    .page-hero-grid {
+      position:absolute; inset:0;
+      background-image: linear-gradient(rgba(30,136,229,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(30,136,229,0.05) 1px, transparent 1px);
+      background-size:60px 60px;
+      animation: gridDrift 28s linear infinite;
+    }
+    @keyframes gridDrift { from{background-position:0 0} to{background-position:60px 60px} }
+    .page-hero-content { position:relative; z-index:2; }
+    .page-eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      background:rgba(244,120,32,0.1); border:1px solid rgba(244,120,32,0.3);
+      border-radius:100px; padding:0.4rem 1.1rem 0.4rem 0.6rem;
+      font-size:0.72rem; font-weight:600; letter-spacing:0.16em;
+      text-transform:uppercase; color:var(--orange-light); margin-bottom:1.2rem;
+    }
+    /* .dot-live { width:8px; height:8px; background:var(--orange); border-radius:50%; box-shadow:0 0 10px var(--orange); animation:blink 2.5s ease-in-out infinite; } */
+    .dot-live { width:8px; height:8px;
+      border-radius:50%; 
+      animation:blink 2.5s ease-in-out infinite; 
+      /* background: var(--orange); */
+      background: #00FF00;
+      border-radius: 50%;
+      /*box-shadow: 0 0 10px var(--orange); */
+      box-shadow: 0 0 10px #004700;
+}
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .page-title {
+      font-family:'Barlow Condensed',sans-serif; font-size:clamp(3rem,6vw,5.5rem);
+      font-weight:800; text-transform:uppercase; line-height:0.95; letter-spacing:-0.01em;
+      margin-bottom:1rem;
+    }
+    .page-title .t-orange { background:linear-gradient(90deg,var(--orange),var(--orange-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .page-subtitle { font-size:1rem; font-weight:300; color:var(--gray-light); max-width:55ch; line-height:1.7; }
+
+    /* breadcrumb */
+    .breadcrumb {
+      position:absolute; bottom:1.8rem; right:5%;
+      display:flex; align-items:center; gap:8px;
+      font-size:0.75rem; font-weight:500; letter-spacing:0.1em;
+      text-transform:uppercase; color:var(--gray-mid); z-index:2;
+    }
+    .breadcrumb a { color:var(--gray-mid); text-decoration:none; transition:color 0.2s; }
+    .breadcrumb a:hover { color:var(--orange-light); }
+    .breadcrumb span { color:var(--orange); }
+
+    /* ── DIVIDER ── */
+    .divider { width:100%; height:1px; background:linear-gradient(90deg,transparent,rgba(30,136,229,0.4),var(--orange),rgba(30,136,229,0.4),transparent); }
+
+    /* ── SECTION SHARED ── */
+    section { padding:6rem 5%; }
+    .section-eyebrow {
+      display:flex; align-items:center; gap:12px;
+      font-size:0.72rem; font-weight:600; letter-spacing:0.18em;
+      text-transform:uppercase; color:var(--orange); margin-bottom:1rem;
+    }
+    .section-eyebrow::before { content:''; display:block; width:28px; height:2px; background:linear-gradient(90deg,var(--orange),var(--orange-light)); border-radius:2px; }
+    .section-title { font-family:'Barlow Condensed',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; text-transform:uppercase; line-height:1.05; letter-spacing:0.01em; margin-bottom:0.9rem; }
+    .section-title span { color:var(--orange); }
+    .section-desc { font-size:0.95rem; font-weight:300; color:var(--gray-light); line-height:1.75; max-width:55ch; margin-bottom:3rem; }
+
+    /* ════════════════════════════════════
+       3D WORLD MAP SECTION
+    ════════════════════════════════════ */
+    #locations {
+      background:linear-gradient(180deg, #020A18 0%, #041D3A 100%);
+      padding:0; position:relative; overflow:hidden;
+    }
+    .world-wrap {
+      position:relative; width:100%; height:520px;
+      display:flex; align-items:center; justify-content:center;
+    }
+    #worldCanvas { display:block; width:100%; height:100%; }
+
+    /* location pins on top of canvas */
+    .map-pins { position:absolute; inset:0; pointer-events:none; }
+    .map-pin {
+      position:absolute;
+      display:flex; flex-direction:column; align-items:center;
+      transform:translate(-50%, -100%);
+      pointer-events:all; cursor:default;
+    }
+    .pin-dot {
+      width:14px; height:14px; border-radius:50%;
+      background:var(--orange); border:2px solid #fff;
+      box-shadow:0 0 18px rgba(244,120,32,0.8), 0 0 36px rgba(244,120,32,0.4);
+      position:relative; animation:pinPulse 2s ease-in-out infinite;
+    }
+    .pin-dot::after {
+      content:''; position:absolute; inset:-5px; border-radius:50%;
+      border:2px solid rgba(244,120,32,0.5);
+      animation:pingOut 2s ease-out infinite;
+    }
+    @keyframes pinPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+    @keyframes pingOut  { 0%{transform:scale(1);opacity:1} 100%{transform:scale(2.5);opacity:0} }
+
+    .pin-label {
+      background:rgba(4,29,58,0.92); border:1px solid rgba(244,120,32,0.35);
+      border-radius:8px; padding:0.5rem 0.9rem; margin-bottom:8px;
+      text-align:center; white-space:nowrap; backdrop-filter:blur(10px);
+      box-shadow:0 8px 24px rgba(0,0,0,0.4);
+    }
+    .pin-label strong { display:block; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--orange-light); }
+    .pin-label span { font-size:0.72rem; font-weight:300; color:var(--gray-light); }
+
+    /* connector line from pin to dot */
+    .pin-line { width:2px; height:18px; background:linear-gradient(to bottom,var(--orange),transparent); }
+
+    /* location cards row below map */
+    .location-cards {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:0; border-top:1px solid rgba(30,136,229,0.12);
+    }
+    .location-card {
+      padding:3rem 5%; position:relative; overflow:hidden;
+      border-right:1px solid rgba(30,136,229,0.12);
+      transition:background 0.3s;
+    }
+    .location-card:last-child { border-right:none; }
+    .location-card:hover { background:rgba(10,61,107,0.2); }
+    .location-card::before {
+      content:''; position:absolute; top:0; left:0; width:100%; height:3px;
+      background:linear-gradient(90deg,var(--orange),var(--cyan));
+      transform:scaleX(0); transform-origin:left; transition:transform 0.4s ease;
+    }
+    .location-card:hover::before { transform:scaleX(1); }
+
+    .lc-flag { font-size:2.5rem; margin-bottom:1rem; display:block; }
+    .lc-type {
+      font-size:0.7rem; font-weight:600; letter-spacing:0.18em;
+      text-transform:uppercase; color:var(--orange); margin-bottom:0.4rem;
+    }
+    .lc-name { font-family:'Barlow Condensed',sans-serif; font-size:1.6rem; font-weight:800; text-transform:uppercase; color:var(--white); margin-bottom:1.5rem; }
+    .lc-detail { display:flex; align-items:flex-start; gap:12px; margin-bottom:1.1rem; }
+    .lc-icon { font-size:1.1rem; flex-shrink:0; margin-top:2px; }
+    .lc-text strong { display:block; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--gray-light); margin-bottom:0.15rem; }
+    .lc-text span { font-size:0.88rem; font-weight:300; color:var(--gray-mid); line-height:1.6; }
+    .lc-text a { color:var(--cyan); text-decoration:none; transition:color 0.2s; }
+    .lc-text a:hover { color:var(--orange-light); }
+
+    /* ════════════════════════════════════
+       CONTACT FORM + TEAM GRID
+    ════════════════════════════════════ */
+    #contact-main {
+      background:linear-gradient(180deg,#041D3A 0%,#020A18 100%);
+      position:relative;
+    }
+    #contact-main::before {
+      content:''; position:absolute; inset:0;
+      background-image: linear-gradient(rgba(30,136,229,0.03) 1px,transparent 1px), linear-gradient(90deg,rgba(30,136,229,0.03) 1px,transparent 1px);
+      background-size:55px 55px;
+    }
+    .contact-layout {
+      position:relative;
+      display:grid; grid-template-columns:1.1fr 1fr; gap:5rem; align-items:start;
+    }
+
+    /* Form */
+    .contact-form-wrap { position:relative; }
+    .form-glass {
+      background:rgba(10,40,80,0.4); border:1px solid rgba(30,136,229,0.18);
+      border-radius:16px; padding:2.5rem; backdrop-filter:blur(12px);
+      box-shadow:0 24px 60px rgba(0,0,0,0.35);
+    }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem; }
+    .form-group { display:flex; flex-direction:column; gap:0.4rem; margin-bottom:1rem; }
+    .form-group label { font-size:0.73rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--gray-light); }
+    .form-group input, .form-group select, .form-group textarea {
+      background:rgba(4,29,58,0.7); border:1px solid rgba(30,136,229,0.2);
+      border-radius:8px; padding:0.8rem 1rem;
+      font-family:'Barlow',sans-serif; font-size:0.9rem; font-weight:300;
+      color:var(--white); outline:none; transition:border-color 0.25s, background 0.25s; width:100%;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color:var(--gray-mid); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color:var(--orange); background:rgba(244,120,32,0.05);
+    }
+    .form-group select option { background:#071E3D; color:var(--white); }
+    .form-group textarea { resize:vertical; min-height:110px; }
+    .btn-submit {
+      width:100%; background:linear-gradient(135deg,var(--orange),var(--orange-light));
+      color:#fff; padding:1rem; border-radius:8px;
+      font-family:'Barlow',sans-serif; font-size:0.92rem; font-weight:700;
+      letter-spacing:0.08em; text-transform:uppercase; border:none; cursor:pointer;
+      box-shadow:0 6px 22px rgba(244,120,32,0.4); transition:all 0.25s;
+      display:flex; align-items:center; justify-content:center; gap:10px; margin-top:0.5rem;
+      position:relative; overflow:hidden;
+    }
+    .btn-submit::before {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,0.2) 50%,transparent 70%);
+      transform:translateX(-100%); transition:transform 0.55s ease;
+    }
+    .btn-submit:hover::before { transform:translateX(100%); }
+    .btn-submit:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(244,120,32,0.55); }
+
+    /* quick contact pills */
+    .quick-contacts {
+      display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:1.8rem;
+    }
+    .qc-pill {
+      display:flex; align-items:center; gap:8px;
+      background:rgba(10,61,107,0.35); border:1px solid rgba(30,136,229,0.2);
+      border-radius:100px; padding:0.5rem 1.1rem;
+      font-size:0.78rem; font-weight:400; color:var(--gray-light);
+      text-decoration:none; transition:all 0.25s;
+    }
+    .qc-pill:hover { border-color:rgba(244,120,32,0.4); color:var(--orange-light); background:rgba(244,120,32,0.08); }
+    .qc-pill svg { width:14px; height:14px; fill:currentColor; flex-shrink:0; }
+
+    /* Team sidebar */
+    .team-sidebar { display:flex; flex-direction:column; gap:0; }
+    .team-card {
+      padding:1.4rem 1.6rem; border-bottom:1px solid rgba(30,136,229,0.1);
+      position:relative; overflow:hidden; cursor:default; transition:background 0.3s;
+      display:grid; grid-template-columns:auto 1fr; gap:1rem; align-items:center;
+    }
+    .team-card:first-child { border-top:1px solid rgba(30,136,229,0.1); }
+    .team-card:hover { background:rgba(10,40,80,0.4); }
+    .team-card::before {
+      content:''; position:absolute; left:0; top:0; width:3px; height:100%;
+      background:linear-gradient(to bottom,var(--orange),var(--cyan));
+      transform:scaleY(0); transform-origin:top; transition:transform 0.35s ease;
+    }
+    .team-card:hover::before { transform:scaleY(1); }
+
+    .team-avatar {
+      width:48px; height:48px; border-radius:50%;
+      background:linear-gradient(135deg,var(--blue-mid),var(--blue-bright));
+      border:2px solid rgba(30,136,229,0.3);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1rem;
+      color:var(--white); flex-shrink:0; transition:border-color 0.3s, box-shadow 0.3s;
+    }
+    .team-avatar.tech {
+      background:linear-gradient(135deg,var(--orange-deep),var(--orange));
+      border-color:rgba(244,120,32,0.4);
+    }
+    .team-card:hover .team-avatar { border-color:var(--orange); box-shadow:0 0 16px rgba(244,120,32,0.3); }
+
+    .team-info { min-width:0; }
+    .team-role { font-size:0.68rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--orange); margin-bottom:0.2rem; }
+    .team-name { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1rem; letter-spacing:0.03em; color:var(--white); margin-bottom:0.25rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .team-email { font-size:0.75rem; font-weight:300; color:var(--gray-mid); text-decoration:none; transition:color 0.2s; display:block; }
+    .team-email:hover { color:var(--cyan); }
+
+    /* ════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════ */
+    footer { background:#020A18; padding:4.5rem 5% 2rem; border-top:1px solid rgba(30,136,229,0.1); }
+    .footer-top { display:grid; grid-template-columns:2.2fr 1fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(30,136,229,0.08); }
+    .footer-brand-desc { font-size:0.87rem; font-weight:300; color:var(--gray-mid); line-height:1.8; margin-top:1.2rem; max-width:34ch; }
+    .footer-tagline { display:inline-block; background:rgba(244,120,32,0.1); border:1px solid rgba(244,120,32,0.2); border-radius:4px; padding:0.3rem 0.8rem; font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange-light); margin-top:1.2rem; }
+    .footer-col h5 { font-family:'Barlow Condensed',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--orange); margin-bottom:1.2rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col li { margin-bottom:0.6rem; }
+    .footer-col a { text-decoration:none; font-size:0.85rem; font-weight:300; color:var(--gray-mid); transition:color 0.2s; }
+    .footer-col a:hover { color:var(--orange-light); }
+    .footer-address { font-size:0.83rem; font-weight:300; color:var(--gray-mid); line-height:1.8; }
+    .footer-address strong { display:block; font-weight:500; color:var(--gray-light); margin-bottom:0.2rem; margin-top:0.6rem; }
+    .footer-address strong:first-child { margin-top:0; }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; padding-top:2rem; font-size:0.78rem; color:var(--gray-mid); font-weight:300; }
+    .footer-bottom a { color:var(--orange); text-decoration:none; }
+
+    /* ── REVEAL ANIMATIONS ── */
+    .reveal { opacity:0; transform:translateY(36px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal-left { opacity:0; transform:translateX(-40px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal-right { opacity:0; transform:translateX(40px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal.revealed,.reveal-left.revealed,.reveal-right.revealed { opacity:1; transform:none; }
+    .reveal-delay-1{transition-delay:0.08s} .reveal-delay-2{transition-delay:0.16s}
+    .reveal-delay-3{transition-delay:0.24s} .reveal-delay-4{transition-delay:0.32s}
+    .reveal-delay-5{transition-delay:0.40s} .reveal-delay-6{transition-delay:0.48s}
+
+    /* ── TOAST ── */
+    .toast {
+      position:fixed; bottom:2rem; right:2rem; z-index:999;
+      background:linear-gradient(135deg,var(--orange),var(--orange-light));
+      color:#fff; padding:1rem 2rem; border-radius:10px;
+      font-weight:600; font-size:0.9rem;
+      box-shadow:0 12px 32px rgba(244,120,32,0.45);
+      transform:translateY(80px); opacity:0;
+      transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+      pointer-events:none;
+    }
+    .toast.show { transform:translateY(0); opacity:1; }
+
+    /* WhatsApp float */
+    .wa-float {
+      position:fixed; bottom:2rem; left:2rem; z-index:300;
+      display:flex; align-items:center; gap:10px;
+    }
+    .wa-btn {
+      width:54px; height:54px; background:#25D366; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 6px 22px rgba(37,211,102,0.45); cursor:pointer;
+      transition:all 0.25s; text-decoration:none; position:relative;
+    }
+    .wa-btn::before {
+      content:''; position:absolute; inset:-4px; border-radius:50%;
+      border:2px solid rgba(37,211,102,0.4);
+      animation:waPulse 2.5s ease-out infinite;
+    }
+    @keyframes waPulse { 0%{opacity:1;inset:-4px} 100%{opacity:0;inset:-18px} }
+    .wa-btn:hover { transform:scale(1.1); }
+    .wa-btn svg { width:28px; height:28px; fill:#fff; }
+  
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .location-cards { grid-template-columns: 1fr; }
+      .location-card { border-right: none; border-bottom: 1px solid rgba(30,136,229,0.12); }
+      .location-card:last-child { border-bottom: none; }
+      .world-wrap { height: 300px; }
+    }
+    @media (max-width: 600px) {
+      .page-title { font-size: clamp(2.4rem, 8vw, 3.5rem); }
+      .form-row { grid-template-columns: 1fr; }
+      .quick-contacts { flex-direction: column; }
+      .page-hero { min-height: 42vh; padding-top: 90px; }
+    }
+    @media (max-width: 480px) {
+      .form-glass { padding: 1.5rem; }
+      .section-title { font-size: 1.6rem; }
+    }
+
+    /* ══════════════════════════════════
+       MOBILE HAMBURGER NAV
+    ══════════════════════════════════ */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+      z-index: 300;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(4,29,58,0.98);
+      backdrop-filter: blur(20px);
+      z-index: 250;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-nav-overlay.open { display: flex; opacity: 1; }
+    .mobile-nav-overlay ul { list-style: none; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding: 0; }
+    .mobile-nav-overlay ul a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gray-light); text-decoration: none; transition: color 0.2s;
+    }
+    .mobile-nav-overlay ul a:hover,
+    .mobile-nav-overlay ul a.active { color: var(--orange-light); }
+    .mobile-nav-overlay .mob-cta {
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      color: #fff !important; padding: 0.8rem 2.5rem; border-radius: 6px;
+      font-weight: 700 !important; font-size: 1rem !important;
+      box-shadow: 0 6px 22px rgba(244,120,32,0.4);
+    }
+
+    /* ══════════════════════════════════
+       RESPONSIVE BREAKPOINTS
+    ══════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .nav-links { gap: 1.4rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none !important; }
+      .nav-hamburger { display: flex; }
+      nav { padding: 0 4%; }
+      section { padding: 4rem 4%; }
+      footer { padding: 3.5rem 4% 1.5rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 1.8rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .wa-float { bottom: 1.2rem; left: 1.2rem; }
+    }
+    @media (max-width: 480px) {
+      nav { padding: 0 3%; }
+      section { padding: 3rem 3%; }
+      footer { padding: 3rem 3% 1.5rem; }
+      .nav-logo-text { font-size: 1rem; }
+      .nav-logo-img { height: 36px; width: 36px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="mgi-energy-index.html" class="nav-logo">
+    <img src="LOGO_.png" alt="MGI Energy" class="nav-logo-img"/>
+    <span class="nav-logo-text">MGI <span>ENERGY</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="mgi-energy-index.html#services">Services</a></li>
+    <li><a href="mgi-energy-index.html#sectors">Sectors</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="contact.html" class="nav-cta active">Contact Us</a></li>
+  </ul>
+<button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <ul>
+    <li><a href="mgi-energy-index.html#services">Services</a></li>
+    <li><a href="mgi-energy-index.html#sectors">Sectors</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="contact.html" class="active mob-cta">Contact Us</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow"><div class="dot-live"></div>We're ready to hear from you</div>
+    <h1 class="page-title">Get In<br><span class="t-orange">Touch.</span></h1>
+    <p class="page-subtitle">Two offices. One team. Always available for our clients across Algeria, Libya, and beyond.</p>
+  </div>
+  <div class="breadcrumb">
+    <a href="mgi-energy-index.html">Home</a>
+    <span>›</span>
+    <span>Contact</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ 3D WORLD / LOCATIONS ═══ -->
+<section id="locations">
+  <div class="world-wrap">
+    <canvas id="worldCanvas"></canvas>
+    <!-- Location pins (positioned via JS after canvas renders) -->
+    <div class="map-pins" id="mapPins">
+      <!-- Algeria pin -->
+      <div class="map-pin" id="pin-dz" style="left:51.5%; top:38%">
+        <div class="pin-label">
+          <strong>Laghouat, Algeria</strong>
+          <span>Head Office</span>
+        </div>
+        <div class="pin-line"></div>
+        <div class="pin-dot"></div>
+      </div>
+      <!-- Libya pin -->
+      <div class="map-pin" id="pin-ly" style="left:54.8%; top:43%">
+        <div class="pin-label">
+          <strong>Tripoli, Libya</strong>
+          <span>Branch Office</span>
+        </div>
+        <div class="pin-line"></div>
+        <div class="pin-dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="location-cards">
+    <!-- Algeria -->
+    <div class="location-card reveal">
+      <span class="lc-flag" aria-label="Algeria flag">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="48" height="32" style="border-radius:3px;display:inline-block;vertical-align:middle;">
+    <rect width="450" height="600" fill="#006233"/>
+    <rect x="450" width="450" height="600" fill="#fff"/>
+    <g fill="#D21034" transform="translate(450,300)">
+      <path d="M0-120a120,120,0,1,1,0,240a96,96,0,1,0,0-240"/>
+      <polygon points="0,-80 18.5,-57 47,-57 25.5,-39 34,-13 0,-30 -34,-13 -25.5,-39 -47,-57 -18.5,-57" transform="translate(30,0)"/>
+    </g>
+  </svg>
+</span>
+      <div class="lc-type">Head Office</div>
+      <div class="lc-name">Laghouat, Algeria</div>
+      <div class="lc-detail">
+        <span class="lc-icon">📍</span>
+        <div class="lc-text">
+          <strong>Address</strong>
+          <span>Zone Industrielle, Bouchaker RN°1<br>Laghouat, Algeria</span>
+        </div>
+      </div>
+      <div class="lc-detail">
+        <span class="lc-icon">📞</span>
+        <div class="lc-text">
+          <strong>Phone</strong>
+          <span><a href="tel:+21329133998">+213 (0) 29 133 998</a></span>
+        </div>
+      </div>
+      <div class="lc-detail">
+        <span class="lc-icon">🖨️</span>
+        <div class="lc-text">
+          <strong>Fax</strong>
+          <span>+213 (0) 29 133 998</span>
+        </div>
+      </div>
+      <div class="lc-detail">
+        <span class="lc-icon">✉️</span>
+        <div class="lc-text">
+          <strong>Email</strong>
+          <span><a href="mailto:contact@mgi-energie.com">contact@mgi-energie.com</a></span>
+        </div>
+      </div>
+    </div>
+    <!-- Libya -->
+    <div class="location-card reveal reveal-delay-2">
+      <span class="lc-flag" aria-label="Libya flag">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="48" height="32" style="border-radius:3px;display:inline-block;vertical-align:middle;">
+    <rect width="900" height="600" fill="#239E46"/>
+    <rect width="900" height="200" fill="#000"/>
+    <rect y="400" width="900" height="200" fill="#E70013"/>
+    <g fill="#fff" transform="translate(450,300)">
+      <path d="M0-80a80,80,0,1,1,0,160a65,65,0,1,0,0-160"/>
+      <polygon points="0,-50 11.5,-36 30,-36 16,-25 21,-8 0,-19 -21,-8 -16,-25 -30,-36 -11.5,-36" transform="translate(18,0)"/>
+    </g>
+  </svg>
+</span>
+      <div class="lc-type">Branch Office</div>
+      <div class="lc-name">Tripoli, Libya</div>
+      <div class="lc-detail">
+        <span class="lc-icon">📍</span>
+        <div class="lc-text">
+          <strong>Address</strong>
+          <span>Quartier Assiyahia<br>Tripoli, Libya</span>
+        </div>
+      </div>
+      <div class="lc-detail">
+        <span class="lc-icon">📞</span>
+        <div class="lc-text">
+          <strong>Phone</strong>
+          <span><a href="tel:+213672106655">+213 (0) 672 106 655</a></span>
+        </div>
+      </div>
+      <div class="lc-detail">
+        <span class="lc-icon">🖨️</span>
+        <div class="lc-text">
+          <strong>Fax</strong>
+          <span>+213 (0) 29 133 998</span>
+        </div>
+      </div>
+      <div class="lc-detail">
+        <span class="lc-icon">✉️</span>
+        <div class="lc-text">
+          <strong>Email</strong>
+          <span><a href="mailto:contact@mgi-energie.com">contact@mgi-energie.com</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ CONTACT FORM + TEAM ═══ -->
+<section id="contact-main">
+  <div class="contact-layout">
+
+    <!-- LEFT: FORM -->
+    <div class="contact-form-wrap reveal-left">
+      <div class="section-eyebrow">Send Us a Message</div>
+      <h2 class="section-title">Let's Start a<br><span>Conversation</span></h2>
+      <p class="section-desc">Tell us about your project and we'll get back to you within 24 hours.</p>
+
+      <div class="form-glass">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Oussama" id="f-fname"/>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Megoussi" id="f-lname"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@company.com" id="f-email"/>
+        </div>
+        <div class="form-group">
+          <label>Company / Organisation</label>
+          <input type="text" placeholder="Sonatrach, GE, ..." id="f-company"/>
+        </div>
+        <div class="form-group">
+          <label>Service Required</label>
+          <select id="f-service">
+            <option value="" disabled selected>Select a service...</option>
+            <option>Valve Repair & Testing</option>
+            <option>Field Calibration</option>
+            <option>Heat Exchanger Repair</option>
+            <option>Turbine Oil System Flushing</option>
+            <option>Industrial Bolting</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Describe your project or inquiry..." id="f-msg"></textarea>
+        </div>
+        <button class="btn-submit" onclick="submitForm()">
+          Send Message
+          <svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+
+      <div class="quick-contacts">
+        <a href="tel:+21329133998" class="qc-pill">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.07 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +213 (0) 29 133 998
+        </a>
+        <a href="mailto:contact@mgi-energie.com" class="qc-pill">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contact@mgi-energie.com
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: TEAM -->
+    <div class="reveal-right">
+      <div class="section-eyebrow">Our Team</div>
+      <h2 class="section-title">The Right Person<br><span>For Your Need</span></h2>
+      <p class="section-desc" style="margin-bottom:1.5rem;">Reach out directly to the department that matches your inquiry.</p>
+
+      <div class="team-sidebar">
+
+        <div class="team-card">
+          <div class="team-avatar">OM</div>
+          <div class="team-info">
+            <div class="team-role">🏢 Management</div>
+            <div class="team-name">Megoussi Oussama Elhidjazi</div>
+            <a href="mailto:o.megoussi@mgi-energie.com" class="team-email">o.megoussi@mgi-energie.com</a>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">KF</div>
+          <div class="team-info">
+            <div class="team-role">🛡️ QHSE Manager</div>
+            <div class="team-name">Khelifi Farouk</div>
+            <a href="mailto:ehs.manager@mgi-energie.com" class="team-email">ehs.manager@mgi-energie.com</a>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">BA</div>
+          <div class="team-info">
+            <div class="team-role">📈 Sales Manager</div>
+            <div class="team-name">Benkhaled Ahmed</div>
+            <a href="mailto:sales.manager@mgi-energie.com" class="team-email">sales.manager@mgi-energie.com</a>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">LM</div>
+          <div class="team-info">
+            <div class="team-role">💰 Finance Manager</div>
+            <div class="team-name">Lebachria Mebrouk</div>
+            <a href="mailto:financial.service@mgi-energie.com" class="team-email">financial.service@mgi-energie.com</a>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">SN</div>
+          <div class="team-info">
+            <div class="team-role">👥 Human Resources</div>
+            <div class="team-name">Saim Nedjoua</div>
+            <a href="mailto:responsable.rh@mgi-energie.com" class="team-email">responsable.rh@mgi-energie.com</a>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">MS</div>
+          <div class="team-info">
+            <div class="team-role">📦 Purchasing &amp; Logistics</div>
+            <div class="team-name">Megoussi Souhibe</div>
+            <a href="mailto:contact@mgi-energie.com" class="team-email">contact@mgi-energie.com</a>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar tech">BC</div>
+          <div class="team-info">
+            <div class="team-role">⚡ Digital & Tech Lead</div>
+            <div class="team-name">Bader Mohammed Chakib</div>
+            <a href="mailto:tech@mgi-energie.com" class="team-email">tech@mgi-energie.com</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="mgi-energy-index.html" class="nav-logo" style="text-decoration:none;">
+        <img src="LOGO_.png" alt="MGI Energy" class="nav-logo-img"/>
+        <span class="nav-logo-text">MGI <span style="color:var(--orange)">ENERGY</span></span>
+      </a>
+      <p class="footer-brand-desc">Your first partner in industrial maintenance and technical assistance — ensuring the reliability of your machinery with unparalleled expertise.</p>
+      <div class="footer-tagline">Our Goal. Your Trust.</div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Valve Repair</a></li><li><a href="#">Valve Testing</a></li>
+        <li><a href="#">Calibration</a></li><li><a href="#">Heat Exchangers</a></li>
+        <li><a href="#">Turbine Flushing</a></li><li><a href="#">Industrial Bolting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li><li><a href="#">Projects (Algeria)</a></li>
+        <li><a href="#">Projects (Abroad)</a></li><li><a href="#">Equipment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Locations</h5>
+      <div class="footer-address">
+        <strong>Algeria (Head Office)</strong>Zone Industrielle<br>Bouchaker RN°1, Laghouat
+        <strong>Libya (Branch)</strong>Quartier Assiyahia<br>Tripoli, Libya
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MGI Energy. All rights reserved.</span>
+    <span>Designed for excellence — <a href="#">mgi-energie.com</a></span>
+  </div>
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/213672106655" target="_blank" class="wa-float">
+  <div class="wa-btn">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+</a>
+
+<!-- Toast -->
+<div class="toast" id="toast">✅ Message sent! We'll reply within 24h.</div>
+
+<script>
+/* ── SCROLL REVEAL ── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => ro.observe(el));
+
+/* ── FORM SUBMIT ── */
+function submitForm() {
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+}
+
+/* ════════════════════════════════════════
+   ANIMATED 3D WORLD MAP — Canvas
+   Draws a stylized flat world map with
+   glowing grid, animated scan line,
+   and pulsing location dots
+════════════════════════════════════════ */
+(function() {
+  const canvas = document.getElementById('worldCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth  * window.devicePixelRatio;
+    canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+  resize();
+  window.addEventListener('resize', () => { resize(); });
+
+  const W = () => canvas.offsetWidth;
+  const H = () => canvas.offsetHeight;
+
+  // World continent outlines (simplified polygons — Africa, Europe, Asia, Americas)
+  // Normalized 0-1 coords → mapped to canvas
+  const landmasses = [
+    // Europe
+    { pts: [[0.455,0.18],[0.47,0.14],[0.49,0.13],[0.515,0.15],[0.52,0.20],[0.505,0.24],[0.485,0.26],[0.46,0.25],[0.45,0.22]], color:'#0A3D6B' },
+    // Africa
+    { pts: [[0.455,0.28],[0.475,0.26],[0.515,0.26],[0.535,0.29],[0.545,0.35],[0.535,0.46],[0.51,0.54],[0.485,0.56],[0.46,0.52],[0.445,0.44],[0.44,0.36],[0.45,0.30]], color:'#0A3D6B' },
+    // Asia (simplified)
+    { pts: [[0.52,0.12],[0.58,0.10],[0.68,0.12],[0.76,0.16],[0.78,0.22],[0.72,0.30],[0.65,0.32],[0.60,0.30],[0.55,0.26],[0.53,0.20]], color:'#0A3D6B' },
+    // North America
+    { pts: [[0.10,0.10],[0.18,0.08],[0.26,0.12],[0.30,0.20],[0.28,0.30],[0.22,0.36],[0.14,0.34],[0.08,0.26],[0.07,0.18]], color:'#0A3D6B' },
+    // South America
+    { pts: [[0.22,0.38],[0.28,0.36],[0.32,0.40],[0.33,0.50],[0.28,0.60],[0.22,0.65],[0.17,0.60],[0.16,0.50],[0.18,0.42]], color:'#0A3D6B' },
+    // Australia
+    { pts: [[0.72,0.44],[0.80,0.42],[0.84,0.46],[0.83,0.54],[0.76,0.57],[0.70,0.55],[0.68,0.50],[0.70,0.46]], color:'#0A3D6B' },
+  ];
+
+  let scanX = 0;
+  let t = 0;
+
+  function draw() {
+    const w = W(), h = H();
+    ctx.clearRect(0, 0, w, h);
+
+    // Dark background gradient
+    const bg = ctx.createLinearGradient(0, 0, 0, h);
+    bg.addColorStop(0, '#020810');
+    bg.addColorStop(1, '#041D3A');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    // Grid lines
+    const gStep = 40;
+    ctx.strokeStyle = 'rgba(30,136,229,0.07)';
+    ctx.lineWidth = 1;
+    for (let x = 0; x < w; x += gStep) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+    }
+    for (let y = 0; y < h; y += gStep) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+    }
+
+    // Latitude/longitude lines (world grid)
+    ctx.strokeStyle = 'rgba(41,188,212,0.08)';
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 6; i++) {
+      const y = (i / 6) * h;
+      ctx.beginPath();
+      ctx.setLineDash([4, 8]);
+      ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+    }
+    for (let i = 0; i <= 12; i++) {
+      const x = (i / 12) * w;
+      ctx.beginPath();
+      ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+
+    // Landmasses
+    landmasses.forEach(land => {
+      ctx.beginPath();
+      land.pts.forEach(([px, py], i) => {
+        const x = px * w, y = py * h;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      });
+      ctx.closePath();
+      ctx.fillStyle = land.color;
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(41,188,212,0.25)';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+    });
+
+    // Scan line sweep
+    scanX = (scanX + 0.8) % w;
+    const grad = ctx.createLinearGradient(scanX - 60, 0, scanX + 10, 0);
+    grad.addColorStop(0, 'rgba(41,188,212,0)');
+    grad.addColorStop(0.7, 'rgba(41,188,212,0.08)');
+    grad.addColorStop(1, 'rgba(244,120,32,0.25)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(scanX - 60, 0, 70, h);
+
+    // Vertical scan line
+    ctx.strokeStyle = 'rgba(244,120,32,0.6)';
+    ctx.lineWidth = 1.5;
+    ctx.shadowColor = '#F47820';
+    ctx.shadowBlur = 10;
+    ctx.beginPath(); ctx.moveTo(scanX, 0); ctx.lineTo(scanX, h); ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // Location dots (Algeria & Libya on map)
+    const locs = [
+      { px: 0.515, py: 0.34, label:'DZ', color:'#F47820' },
+      { px: 0.538, py: 0.36, label:'LY', color:'#29BCD4' },
+    ];
+    locs.forEach(loc => {
+      const x = loc.px * w, y = loc.py * h;
+      const pulse = 0.5 + Math.sin(t * 3) * 0.5;
+      // Outer pulse ring
+      ctx.beginPath();
+      ctx.arc(x, y, 14 + pulse * 8, 0, Math.PI * 2);
+      ctx.strokeStyle = loc.color.replace(')', `,${0.15 * pulse})`).replace('rgb', 'rgba');
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      // Glow
+      ctx.shadowColor = loc.color;
+      ctx.shadowBlur = 20;
+      ctx.beginPath();
+      ctx.arc(x, y, 6, 0, Math.PI * 2);
+      ctx.fillStyle = loc.color;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      // White center
+      ctx.beginPath();
+      ctx.arc(x, y, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#fff';
+      ctx.fill();
+    });
+
+    // Connection arc between the two cities
+    const dz = { x: locs[0].px * w, y: locs[0].py * h };
+    const ly = { x: locs[1].px * w, y: locs[1].py * h };
+    const progress = (Math.sin(t * 1.2) + 1) * 0.5;
+    const arcGrad = ctx.createLinearGradient(dz.x, dz.y, ly.x, ly.y);
+    arcGrad.addColorStop(0, 'rgba(244,120,32,0.8)');
+    arcGrad.addColorStop(1, 'rgba(41,188,212,0.8)');
+    ctx.beginPath();
+    ctx.moveTo(dz.x, dz.y);
+    ctx.quadraticCurveTo((dz.x + ly.x) / 2, Math.min(dz.y, ly.y) - 18, ly.x, ly.y);
+    ctx.strokeStyle = arcGrad;
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([4, 6]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Animated dot traveling on arc
+    const px = dz.x + (ly.x - dz.x) * progress;
+    const cpY = Math.min(dz.y, ly.y) - 18;
+    const arcY = (1 - progress) * (1 - progress) * dz.y + 2 * (1 - progress) * progress * cpY + progress * progress * ly.y;
+    ctx.beginPath();
+    ctx.arc(px, arcY, 4, 0, Math.PI * 2);
+    ctx.fillStyle = '#fff';
+    ctx.shadowColor = '#FF9A45';
+    ctx.shadowBlur = 12;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+
+    t += 0.016;
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();
+</script>
+
+<script>
+/* ── MOBILE NAV ── */
+(function() {
+  const btn = document.getElementById('navHamburger');
+  const overlay = document.getElementById('mobileNav');
+  if (!btn || !overlay) return;
+  btn.addEventListener('click', () => {
+    const open = overlay.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  overlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      overlay.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

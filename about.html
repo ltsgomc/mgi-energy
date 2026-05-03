@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — MGI Energy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=oLunr6uV0UmLK9jfs5h0SwngytWqiOwaNvhp1nK8g_s1IhMOyHeGiI5e4w-noeEXJtT1Z2pcRlKwmBSry4OvSwgy_XP0eka7gPo8Zp_XfE1BosBg9yzv7VpeHsQnLF2_hh8eGyR79FkA1h69VtSRv6haBHYH1nO4B9IOECt9gr-1YBsUhqOGC0U3EFON5kwRTX51RekMtA5TZ4p3QIgLfGgsf53KXR5FOqVCkiJ4B7K0KbOO_ozoZfLy1mYB0SbKYDR_lkC2SnQkLh0pRS95kw" charset="UTF-8"></script><style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --blue-deep:    #041D3A;
+      --blue-mid:     #0A3D6B;
+      --blue-bright:  #1565C0;
+      --blue-light:   #1E88E5;
+      --blue-glow:    #42A5F5;
+      --orange:       #F47820;
+      --orange-light: #FF9A45;
+      --orange-deep:  #C95E00;
+      --cyan:         #29BCD4;
+      --white:        #FFFFFF;
+      --gray-light:   #B0BEC5;
+      --gray-mid:     #546E7A;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Barlow',sans-serif; background:var(--blue-deep); color:var(--white); overflow-x:hidden; }
+
+    /* ── NAV ── */
+    nav { position:fixed; top:0; width:100%; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:0 5%; height:72px; background:rgba(4,29,58,0.92); backdrop-filter:blur(20px); border-bottom:1px solid rgba(30,136,229,0.18); }
+    .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav-logo-img { height:46px; width:46px; object-fit:contain; border-radius:8px; background:#fff; padding:3px; box-shadow:0 0 18px rgba(244,120,32,0.3); }
+    .nav-logo-text { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--white); }
+    .nav-logo-text span { color:var(--orange); }
+    .nav-links { display:flex; align-items:center; gap:2.2rem; list-style:none; }
+    .nav-links a { text-decoration:none; font-size:0.82rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray-light); transition:color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--orange-light); }
+    .nav-cta { background:linear-gradient(135deg,var(--orange),var(--orange-light)); color:#fff !important; padding:0.5rem 1.4rem; border-radius:5px; font-weight:600 !important; box-shadow:0 4px 15px rgba(244,120,32,0.35); }
+
+    /* ── DIVIDER ── */
+    .divider { width:100%; height:1px; background:linear-gradient(90deg,transparent,rgba(30,136,229,0.4),var(--orange),rgba(30,136,229,0.4),transparent); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      position:relative; min-height:100vh;
+      display:grid; grid-template-columns:1fr 1fr;
+      align-items:center; padding:100px 5% 80px;
+      overflow:hidden; gap:4rem;
+    }
+    .page-hero-bg {
+      position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 70% 80% at 65% 40%, rgba(21,101,192,0.3) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 10% 70%, rgba(244,120,32,0.10) 0%, transparent 55%),
+        linear-gradient(160deg, var(--blue-deep) 0%, #040F20 60%, #020810 100%);
+    }
+    .page-hero-grid {
+      position:absolute; inset:0;
+      background-image: linear-gradient(rgba(30,136,229,0.06) 1px,transparent 1px), linear-gradient(90deg,rgba(30,136,229,0.06) 1px,transparent 1px);
+      background-size:65px 65px; animation:gridDrift 28s linear infinite;
+    }
+    @keyframes gridDrift { from{background-position:0 0} to{background-position:65px 65px} }
+
+    .page-hero-left { position:relative; z-index:2; }
+    .page-eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      background:rgba(244,120,32,0.1); border:1px solid rgba(244,120,32,0.3);
+      border-radius:100px; padding:0.4rem 1.1rem 0.4rem 0.6rem;
+      font-size:0.72rem; font-weight:600; letter-spacing:0.16em;
+      text-transform:uppercase; color:var(--orange-light); margin-bottom:1.4rem;
+    }
+    .dot-live { width:8px; height:8px;
+      border-radius:50%; 
+      animation:blink 2.5s ease-in-out infinite; 
+      /* background: var(--orange); */
+      background: #00FF00;
+      border-radius: 50%;
+      /*box-shadow: 0 0 10px var(--orange); */
+      box-shadow: 0 0 10px #004700;
+}
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .page-title { font-family:'Barlow Condensed',sans-serif; font-size:clamp(3.5rem,6vw,6rem); font-weight:800; text-transform:uppercase; line-height:0.93; letter-spacing:-0.01em; margin-bottom:1.4rem; }
+    .t-orange { background:linear-gradient(90deg,var(--orange),var(--orange-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .t-cyan { color:var(--cyan); }
+
+    .page-desc { font-size:1.05rem; font-weight:300; color:var(--gray-light); line-height:1.78; max-width:52ch; margin-bottom:2.5rem; }
+    .page-desc strong { color:var(--white); font-weight:500; }
+
+    .hero-pills { display:flex; gap:0.7rem; flex-wrap:wrap; }
+    .pill {
+      display:inline-flex; align-items:center; gap:7px;
+      background:rgba(10,61,107,0.5); border:1px solid rgba(30,136,229,0.22);
+      border-radius:100px; padding:0.45rem 1rem;
+      font-size:0.76rem; font-weight:500; color:var(--gray-light);
+    }
+
+    /* right side — animated stats canvas */
+    .hero-right { position:relative; z-index:2; display:flex; align-items:center; justify-content:center; height:100%; }
+    #statsCanvas { display:block; width:100%; max-width:480px; height:480px; }
+
+    .breadcrumb { position:absolute; bottom:2rem; right:5%; display:flex; align-items:center; gap:8px; font-size:0.75rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray-mid); z-index:2; }
+    .breadcrumb a { color:var(--gray-mid); text-decoration:none; transition:color 0.2s; }
+    .breadcrumb a:hover { color:var(--orange-light); }
+    .breadcrumb span { color:var(--orange); }
+
+    /* ── SHARED ── */
+    section { padding:6rem 5%; }
+    .section-eyebrow { display:flex; align-items:center; gap:12px; font-size:0.72rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--orange); margin-bottom:1rem; }
+    .section-eyebrow::before { content:''; display:block; width:28px; height:2px; background:linear-gradient(90deg,var(--orange),var(--orange-light)); border-radius:2px; }
+    .section-title { font-family:'Barlow Condensed',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; text-transform:uppercase; line-height:1.05; letter-spacing:0.01em; margin-bottom:0.9rem; }
+    .section-title span { color:var(--orange); }
+    .section-desc { font-size:0.97rem; font-weight:300; color:var(--gray-light); line-height:1.75; max-width:55ch; margin-bottom:3rem; }
+
+    /* ════════════════════════════════════
+       MISSION & VISION
+    ════════════════════════════════════ */
+    #mission {
+      background:linear-gradient(180deg,#020A18 0%,#041D3A 100%);
+      position:relative; overflow:hidden;
+    }
+    #mission::before {
+      content:''; position:absolute; inset:0;
+      background-image: linear-gradient(rgba(30,136,229,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(30,136,229,0.04) 1px,transparent 1px);
+      background-size:55px 55px;
+    }
+    .mv-grid { position:relative; display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(30,136,229,0.1); border-radius:16px; overflow:hidden; border:1px solid rgba(30,136,229,0.12); }
+    .mv-card {
+      background:rgba(4,12,28,0.95); padding:3.5rem 3rem;
+      position:relative; overflow:hidden; cursor:default;
+      transition:background 0.3s;
+    }
+    .mv-card:hover { background:rgba(10,30,60,0.95); }
+    .mv-card::before {
+      content:''; position:absolute; top:0; left:0; width:100%; height:3px;
+      background:linear-gradient(90deg,var(--orange),var(--cyan));
+      transform:scaleX(0); transform-origin:left; transition:transform 0.4s;
+    }
+    .mv-card:hover::before { transform:scaleX(1); }
+    .mv-icon { font-size:3rem; margin-bottom:1.5rem; display:block; filter:drop-shadow(0 0 16px rgba(244,120,32,0.5)); }
+    .mv-label { font-size:0.7rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--orange); margin-bottom:0.6rem; }
+    .mv-title { font-family:'Barlow Condensed',sans-serif; font-size:2rem; font-weight:800; text-transform:uppercase; color:var(--white); margin-bottom:1.2rem; }
+    .mv-text { font-size:0.93rem; font-weight:300; color:var(--gray-light); line-height:1.8; }
+
+    /* ════════════════════════════════════
+       TIMELINE
+    ════════════════════════════════════ */
+    #story {
+      background:linear-gradient(180deg,#041D3A 0%,#020A18 100%);
+      position:relative;
+    }
+    .timeline-header { max-width:600px; }
+    .timeline { position:relative; margin-top:4rem; }
+    .timeline::before {
+      content:''; position:absolute;
+      left:50%; top:0; bottom:0; width:2px;
+      background:linear-gradient(to bottom, var(--orange), var(--cyan), var(--orange));
+      transform:translateX(-50%);
+    }
+    .tl-item {
+      display:grid; grid-template-columns:1fr auto 1fr;
+      gap:0 2rem; align-items:center; margin-bottom:4rem; position:relative;
+    }
+    .tl-item:last-child { margin-bottom:0; }
+    .tl-left { text-align:right; }
+    .tl-right { text-align:left; }
+
+    /* alternate sides */
+    .tl-item:nth-child(even) .tl-content { grid-column:3; }
+    .tl-item:nth-child(even) .tl-empty  { grid-column:1; }
+
+    .tl-dot-wrap {
+      width:52px; height:52px; border-radius:50%;
+      background:linear-gradient(135deg,var(--orange-deep),var(--orange));
+      border:3px solid rgba(244,120,32,0.4);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.78rem;
+      color:#fff; flex-shrink:0; z-index:1;
+      box-shadow:0 0 24px rgba(244,120,32,0.35);
+      transition:transform 0.3s, box-shadow 0.3s;
+    }
+    .tl-item:hover .tl-dot-wrap { transform:scale(1.15); box-shadow:0 0 36px rgba(244,120,32,0.55); }
+
+    .tl-content {
+      background:rgba(4,18,42,0.95); border:1px solid rgba(30,136,229,0.15);
+      border-radius:12px; padding:1.8rem 2rem;
+      transition:border-color 0.3s, background 0.3s;
+    }
+    .tl-item:hover .tl-content { border-color:rgba(244,120,32,0.3); background:rgba(10,30,60,0.95); }
+    .tl-year { font-family:'Barlow Condensed',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--orange); margin-bottom:0.4rem; }
+    .tl-heading { font-family:'Barlow Condensed',sans-serif; font-size:1.2rem; font-weight:700; text-transform:uppercase; color:var(--white); margin-bottom:0.6rem; }
+    .tl-body { font-size:0.85rem; font-weight:300; color:var(--gray-light); line-height:1.7; }
+
+    .tl-empty {} /* spacer */
+
+    /* ════════════════════════════════════
+       VALUES
+    ════════════════════════════════════ */
+    #values {
+      background:linear-gradient(135deg,#020A18 0%,#041D3A 50%,#020A18 100%);
+      position:relative; overflow:hidden;
+    }
+    #values::before {
+      content:''; position:absolute; inset:0;
+      background-image: linear-gradient(rgba(30,136,229,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(30,136,229,0.04) 1px,transparent 1px);
+      background-size:50px 50px;
+    }
+    .values-header { text-align:center; max-width:600px; margin:0 auto 4rem; position:relative; }
+    .values-header .section-eyebrow { justify-content:center; }
+    .values-header .section-eyebrow::before { display:none; }
+    .values-header .section-eyebrow::after { content:''; display:block; width:28px; height:2px; background:linear-gradient(90deg,var(--orange-light),var(--orange)); border-radius:2px; }
+    .values-header .section-desc { max-width:50ch; margin:0 auto; text-align:center; }
+
+    .values-grid {
+      position:relative;
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;
+    }
+    .value-card {
+      background:rgba(4,12,28,0.95); border:1px solid rgba(30,136,229,0.12);
+      border-radius:14px; padding:2.5rem 2rem;
+      position:relative; overflow:hidden; cursor:default;
+      transition:all 0.35s;
+    }
+    .value-card:hover { border-color:rgba(244,120,32,0.35); background:rgba(10,30,60,0.95); transform:translateY(-6px); box-shadow:0 24px 50px rgba(0,0,0,0.4); }
+    .value-card::after {
+      content:''; position:absolute; bottom:0; left:0; width:100%; height:3px;
+      background:linear-gradient(90deg,var(--orange),var(--cyan));
+      transform:scaleX(0); transform-origin:left; transition:transform 0.4s;
+    }
+    .value-card:hover::after { transform:scaleX(1); }
+
+    /* big background letter */
+    .value-bg-letter {
+      position:absolute; top:-10px; right:12px;
+      font-family:'Barlow Condensed',sans-serif; font-size:7rem; font-weight:800;
+      color:rgba(30,136,229,0.05); text-transform:uppercase; line-height:1;
+      pointer-events:none; transition:color 0.35s;
+    }
+    .value-card:hover .value-bg-letter { color:rgba(244,120,32,0.06); }
+
+    .value-icon { font-size:2.4rem; margin-bottom:1.2rem; display:block; filter:drop-shadow(0 0 12px rgba(244,120,32,0.4)); }
+    .value-name { font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--white); margin-bottom:0.8rem; }
+    .value-text { font-size:0.84rem; font-weight:300; color:var(--gray-light); line-height:1.72; }
+
+    /* featured value — spans 2 cols */
+    .value-card.featured { grid-column:span 2; display:grid; grid-template-columns:auto 1fr; gap:2rem; align-items:center; }
+    .value-card.featured .value-icon { font-size:3.5rem; }
+    .value-card.featured .value-name { font-size:1.4rem; }
+
+    /* ════════════════════════════════════
+       TEAM STRIP (optional)
+    ════════════════════════════════════ */
+    #leadership {
+      background:linear-gradient(180deg,#020A18 0%,#041D3A 100%);
+      position:relative;
+    }
+    .leadership-inner { display:grid; grid-template-columns:1fr 2fr; gap:4rem; align-items:start; }
+    .leaders-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+    .leader-card {
+      background:rgba(4,12,28,0.9); border:1px solid rgba(30,136,229,0.12);
+      border-radius:12px; padding:1.8rem; transition:all 0.3s; cursor:default; position:relative; overflow:hidden;
+    }
+    .leader-card::before {
+      content:''; position:absolute; top:0; left:0; width:3px; height:100%;
+      background:linear-gradient(to bottom,var(--orange),var(--cyan));
+      transform:scaleY(0); transform-origin:top; transition:transform 0.35s;
+    }
+    .leader-card:hover { border-color:rgba(244,120,32,0.25); background:rgba(10,30,60,0.9); transform:translateY(-3px); }
+    .leader-card:hover::before { transform:scaleY(1); }
+    .leader-avatar {
+      width:56px; height:56px; border-radius:50%;
+      background:linear-gradient(135deg,var(--blue-mid),var(--blue-bright));
+      border:2px solid rgba(30,136,229,0.3);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1.1rem;
+      color:var(--white); margin-bottom:1rem;
+      transition:border-color 0.3s, box-shadow 0.3s;
+    }
+    .leader-avatar.tech { background:linear-gradient(135deg,var(--orange-deep),var(--orange)); border-color:rgba(244,120,32,0.4); }
+    .leader-card:hover .leader-avatar { border-color:var(--orange); box-shadow:0 0 20px rgba(244,120,32,0.3); }
+    .leader-role { font-size:0.68rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--orange); margin-bottom:0.25rem; }
+    .leader-name { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.98rem; color:var(--white); }
+
+    /* ── FOOTER ── */
+    footer { background:#020A18; padding:4.5rem 5% 2rem; border-top:1px solid rgba(30,136,229,0.1); }
+    .footer-top { display:grid; grid-template-columns:2.2fr 1fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(30,136,229,0.08); }
+    .footer-brand-desc { font-size:0.87rem; font-weight:300; color:var(--gray-mid); line-height:1.8; margin-top:1.2rem; max-width:34ch; }
+    .footer-tagline { display:inline-block; background:rgba(244,120,32,0.1); border:1px solid rgba(244,120,32,0.2); border-radius:4px; padding:0.3rem 0.8rem; font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange-light); margin-top:1.2rem; }
+    .footer-col h5 { font-family:'Barlow Condensed',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--orange); margin-bottom:1.2rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col li { margin-bottom:0.6rem; }
+    .footer-col a { text-decoration:none; font-size:0.85rem; font-weight:300; color:var(--gray-mid); transition:color 0.2s; }
+    .footer-col a:hover { color:var(--orange-light); }
+    .footer-address { font-size:0.83rem; font-weight:300; color:var(--gray-mid); line-height:1.8; }
+    .footer-address strong { display:block; font-weight:500; color:var(--gray-light); margin-bottom:0.2rem; margin-top:0.6rem; }
+    .footer-address strong:first-child { margin-top:0; }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; padding-top:2rem; font-size:0.78rem; color:var(--gray-mid); font-weight:300; }
+    .footer-bottom a { color:var(--orange); text-decoration:none; }
+
+    /* ── REVEALS ── */
+    .reveal { opacity:0; transform:translateY(36px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal-left { opacity:0; transform:translateX(-40px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal-right { opacity:0; transform:translateX(40px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal.revealed,.reveal-left.revealed,.reveal-right.revealed { opacity:1; transform:none; }
+    .rd1{transition-delay:0.08s} .rd2{transition-delay:0.16s} .rd3{transition-delay:0.24s}
+    .rd4{transition-delay:0.32s} .rd5{transition-delay:0.40s} .rd6{transition-delay:0.48s}
+
+    /* WhatsApp float */
+    .wa-float { position:fixed; bottom:2rem; left:2rem; z-index:300; }
+    .wa-btn { width:54px; height:54px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 22px rgba(37,211,102,0.45); cursor:pointer; transition:all 0.25s; text-decoration:none; position:relative; }
+    .wa-btn::before { content:''; position:absolute; inset:-4px; border-radius:50%; border:2px solid rgba(37,211,102,0.4); animation:waPulse 2.5s ease-out infinite; }
+    @keyframes waPulse { 0%{opacity:1;inset:-4px} 100%{opacity:0;inset:-18px} }
+    .wa-btn:hover { transform:scale(1.1); }
+    .wa-btn svg { width:28px; height:28px; fill:#fff; }
+  
+    @media (max-width: 1024px) {
+      .page-hero { grid-template-columns: 1fr; min-height: auto; padding: 110px 5% 4rem; }
+      .hero-right { display: none; }
+      .leadership-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 900px) {
+      .mv-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .value-card.featured { grid-column: span 2; }
+      .leaders-grid { grid-template-columns: 1fr 1fr; }
+      .timeline::before { left: 28px; }
+      .tl-item { grid-template-columns: 56px 1fr; grid-template-rows: auto; }
+      .tl-item .tl-left, .tl-item .tl-right,
+      .tl-item:nth-child(even) .tl-content,
+      .tl-item:nth-child(odd) .tl-content { grid-column: 2; grid-row: 1; text-align: left; }
+      .tl-dot-wrap { grid-column: 1; grid-row: 1; }
+      .tl-empty { display: none; }
+    }
+    @media (max-width: 600px) {
+      .page-title { font-size: clamp(2.6rem, 9vw, 4rem); }
+      .values-grid { grid-template-columns: 1fr; }
+      .value-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .leaders-grid { grid-template-columns: 1fr; }
+      .mv-card { padding: 2rem 1.5rem; }
+    }
+
+    /* ══════════════════════════════════
+       MOBILE HAMBURGER NAV
+    ══════════════════════════════════ */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+      z-index: 300;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(4,29,58,0.98);
+      backdrop-filter: blur(20px);
+      z-index: 250;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-nav-overlay.open { display: flex; opacity: 1; }
+    .mobile-nav-overlay ul { list-style: none; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding: 0; }
+    .mobile-nav-overlay ul a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gray-light); text-decoration: none; transition: color 0.2s;
+    }
+    .mobile-nav-overlay ul a:hover,
+    .mobile-nav-overlay ul a.active { color: var(--orange-light); }
+    .mobile-nav-overlay .mob-cta {
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      color: #fff !important; padding: 0.8rem 2.5rem; border-radius: 6px;
+      font-weight: 700 !important; font-size: 1rem !important;
+      box-shadow: 0 6px 22px rgba(244,120,32,0.4);
+    }
+
+    /* ══════════════════════════════════
+       RESPONSIVE BREAKPOINTS
+    ══════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .nav-links { gap: 1.4rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none !important; }
+      .nav-hamburger { display: flex; }
+      nav { padding: 0 4%; }
+      section { padding: 4rem 4%; }
+      footer { padding: 3.5rem 4% 1.5rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 1.8rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .wa-float { bottom: 1.2rem; left: 1.2rem; }
+    }
+    @media (max-width: 480px) {
+      nav { padding: 0 3%; }
+      section { padding: 3rem 3%; }
+      footer { padding: 3rem 3% 1.5rem; }
+      .nav-logo-text { font-size: 1rem; }
+      .nav-logo-img { height: 36px; width: 36px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="mgi-energy-index.html" class="nav-logo">
+    <img src="LOGO_.png" alt="MGI Energy" class="nav-logo-img"/>
+    <span class="nav-logo-text">MGI <span>ENERGY</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="mgi-energy-index.html#services">Services</a></li>
+    <li><a href="mgi-energy-index.html#sectors">Sectors</a></li>
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+<button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <ul>
+    <li><a href="mgi-energy-index.html#services">Services</a></li>
+    <li><a href="mgi-energy-index.html#sectors">Sectors</a></li>
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="contact.html" class="mob-cta">Contact Us</a></li>
+  </ul>
+</div>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+
+  <div class="page-hero-left">
+    <div class="page-eyebrow"><div class="dot-live"></div>Our Story Since 2018</div>
+    <h1 class="page-title">
+      Built on<br>
+      <span class="t-orange">Trust,</span><br>
+      <span class="t-cyan">Driven by</span><br>
+      Excellence.
+    </h1>
+    <p class="page-desc">
+      MGI Energy Group is a private Algerian company specialising in <strong>Oil &amp; Gas</strong>, Power Plants, Renewable Energies, and Refinery — built on international standards, safety, quality, and delivering on time.
+    </p>
+    <div class="hero-pills">
+      <div class="pill">🛢️ Oil &amp; Gas</div>
+      <div class="pill">⚡ Power Plants</div>
+      <div class="pill">☀️ Renewable Energy</div>
+      <div class="pill">🏭 Refinery</div>
+    </div>
+  </div>
+
+  <!-- Animated stats canvas -->
+  <div class="hero-right">
+    <canvas id="statsCanvas"></canvas>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="mgi-energy-index.html">Home</a>
+    <span>›</span>
+    <span>About Us</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ MISSION & VISION ═══ -->
+<section id="mission" class="reveal">
+  <div class="mv-grid">
+    <div class="mv-card">
+      <span class="mv-icon">🎯</span>
+      <div class="mv-label">Our Mission</div>
+      <div class="mv-title">What We're Here To Do</div>
+      <p class="mv-text">We are established as an Installation, Maintenance and Training service company in Algeria. Our traditional business model is based on the safe accomplishment of services in the oil and gas markets in Algeria and around the world. We build strong, ongoing relationships with our customers, focused on satisfying their implicit and explicit needs.</p>
+    </div>
+    <div class="mv-card">
+      <span class="mv-icon">🔭</span>
+      <div class="mv-label">Our Vision</div>
+      <div class="mv-title">Where We're Headed</div>
+      <p class="mv-text">To provide quality services that exceed the expectations of our esteemed customers. We will strive to attract, develop, and retain the best people and to keep them safe. By defying the risks and competition of the market and undertaking new projects in compliance with international standards, MGI Energy is shaping Algeria's industrial future.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ TIMELINE / STORY ═══ -->
+<section id="story">
+  <div class="timeline-header reveal">
+    <div class="section-eyebrow">Our Journey</div>
+    <h2 class="section-title">From Idea to <span>Industry Leader</span></h2>
+    <p class="section-desc">A company built milestone by milestone, always grounded in technical excellence and client trust.</p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-content reveal-left">
+        <div class="tl-year">2018 — The Beginning</div>
+        <div class="tl-heading">MGI Energy Founded</div>
+        <p class="tl-body">MGI Energy Group is incorporated as a private Algerian company. Founded with a clear mission: deliver world-class industrial maintenance to Algeria's energy sector with zero compromise on safety or quality.</p>
+      </div>
+      <div class="tl-dot-wrap">2018</div>
+      <div class="tl-empty"></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-empty"></div>
+      <div class="tl-dot-wrap">2019</div>
+      <div class="tl-content reveal-right">
+        <div class="tl-year">2019 — First Contracts</div>
+        <div class="tl-heading">Oil &amp; Gas Entry</div>
+        <p class="tl-body">Secured first major contracts in the Algerian oil &amp; gas sector, delivering valve repair and calibration services. Established our Laghouat workshop as the core operations hub in southern Algeria.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-content reveal-left">
+        <div class="tl-year">2020 — Expansion</div>
+        <div class="tl-heading">Mobile Workshop Deployed</div>
+        <p class="tl-body">Launched our 20ft truck-mounted valve testing workshop — enabling us to bring full testing and repair capabilities directly to client sites across Algeria, drastically cutting downtime.</p>
+      </div>
+      <div class="tl-dot-wrap">2020</div>
+      <div class="tl-empty"></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-empty"></div>
+      <div class="tl-dot-wrap">2022</div>
+      <div class="tl-content reveal-right">
+        <div class="tl-year">2022 — Regional Presence</div>
+        <div class="tl-heading">Libya Branch Opens</div>
+        <p class="tl-body">Opened our Tripoli branch office, expanding operations into Libya. MGI Energy now serves clients across two countries, with teams fluent in regional industrial regulations and standards.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-content reveal-left">
+        <div class="tl-year">2024 — Portfolio Growth</div>
+        <div class="tl-heading">Tier-1 Client Portfolio</div>
+        <p class="tl-body">Built a loyal roster of industry-leading clients including Sonatrach, Sonelgaz, GE Algeria Turbines, FieldCore, and CCL Global — all trusting MGI for precision maintenance on their critical assets.</p>
+      </div>
+      <div class="tl-dot-wrap">2024</div>
+      <div class="tl-empty"></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-empty"></div>
+      <div class="tl-dot-wrap">NOW</div>
+      <div class="tl-content reveal-right">
+        <div class="tl-year">2026 — Today</div>
+        <div class="tl-heading">Growing Stronger</div>
+        <p class="tl-body">With 250+ employees, 6 specialist services, and operations across Algeria and Libya, MGI Energy continues to expand — always with the same founding principle: Our Goal, Your Trust.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ VALUES ═══ -->
+<section id="values">
+  <div class="values-header">
+    <div class="section-eyebrow">Core Values</div>
+    <h2 class="section-title">What We <span>Stand For</span></h2>
+    <p class="section-desc">The principles that guide every decision, every project, and every relationship at MGI Energy.</p>
+  </div>
+
+  <div class="values-grid">
+
+    <div class="value-card featured reveal rd1">
+      <div>
+        <span class="value-icon">🎯</span>
+      </div>
+      <div>
+        <div class="value-bg-letter">C</div>
+        <div class="value-name">Customer Focus</div>
+        <p class="value-text">Men and women in our company share the same ambition: Listen, Advise, and Support our customers to make their success our success. Every project begins and ends with our client's goals.</p>
+      </div>
+    </div>
+
+    <div class="value-card reveal rd2">
+      <div class="value-bg-letter">P</div>
+      <span class="value-icon">🏆</span>
+      <div class="value-name">Professionalism</div>
+      <p class="value-text">It is through our knowledge of the business, our demand for quality and transparency, and our respect for our commitments that we earn and keep the trust of our customers.</p>
+    </div>
+
+    <div class="value-card reveal rd3">
+      <div class="value-bg-letter">I</div>
+      <span class="value-icon">💡</span>
+      <div class="value-name">Innovation</div>
+      <p class="value-text">We cultivate the entrepreneurial freedom that stimulates our creativity and ability to innovate. The spirit of progress is the driving force behind our dynamism.</p>
+    </div>
+
+    <div class="value-card reveal rd4">
+      <div class="value-bg-letter">R</div>
+      <span class="value-icon">🤝</span>
+      <div class="value-name">Respect &amp; Diversity</div>
+      <p class="value-text">MGI employees are part of a team they contribute to and adhere to. Treated fairly regardless of origin or gender, in a climate of mutual respect conducive to individual growth.</p>
+    </div>
+
+    <div class="value-card reveal rd5">
+      <div class="value-bg-letter">S</div>
+      <span class="value-icon">✨</span>
+      <div class="value-name">Simplicity</div>
+      <p class="value-text">Simple, straightforward professional relationships built on listening, common sense and flexibility — making for lively and effective collaboration within MGI Energie.</p>
+    </div>
+
+    <div class="value-card reveal rd6">
+      <div class="value-bg-letter">🛡</div>
+      <span class="value-icon">🛡️</span>
+      <div class="value-name">Safety First</div>
+      <p class="value-text">Safety is non-negotiable. We operate in compliance with international safety standards across every site, every service, every time. No deadline is worth a single incident.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ LEADERSHIP ═══ -->
+<section id="leadership">
+  <div class="leadership-inner">
+    <div class="reveal-left">
+      <div class="section-eyebrow">Our People</div>
+      <h2 class="section-title">The Team Behind <span>MGI Energy</span></h2>
+      <p class="section-desc">A dedicated team of professionals across management, engineering, finance, and operations — all aligned on one mission.</p>
+      <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--orange),var(--orange-light));color:#fff;padding:0.9rem 2.2rem;border-radius:6px;font-family:'Barlow',sans-serif;font-size:0.9rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 22px rgba(244,120,32,0.4);transition:all 0.25s;margin-top:1rem;">
+        Contact the Team ↗
+      </a>
+    </div>
+    <div class="leaders-grid">
+      <div class="leader-card reveal rd1">
+        <div class="leader-avatar">OM</div>
+        <div class="leader-role">🏢 Management</div>
+        <div class="leader-name">Megoussi Oussama Elhidjazi</div>
+      </div>
+      <div class="leader-card reveal rd2">
+        <div class="leader-avatar">KF</div>
+        <div class="leader-role">🛡️ QHSE</div>
+        <div class="leader-name">Khelifi Farouk</div>
+      </div>
+      <div class="leader-card reveal rd3">
+        <div class="leader-avatar">BA</div>
+        <div class="leader-role">📈 Sales</div>
+        <div class="leader-name">Benkhaled Ahmed</div>
+      </div>
+      <div class="leader-card reveal rd4">
+        <div class="leader-avatar">LM</div>
+        <div class="leader-role">💰 Finance</div>
+        <div class="leader-name">Lebachria Mebrouk</div>
+      </div>
+      <div class="leader-card reveal rd5">
+        <div class="leader-avatar">SN</div>
+        <div class="leader-role">👥 Human Resources</div>
+        <div class="leader-name">Saim Nedjoua</div>
+      </div>
+      <div class="leader-card reveal rd6">
+        <div class="leader-avatar tech">BC</div>
+        <div class="leader-role">⚡ Digital &amp; Tech Lead</div>
+        <div class="leader-name">Bader Mohammed Chakib</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="mgi-energy-index.html" class="nav-logo" style="text-decoration:none;">
+        <img src="LOGO_.png" alt="MGI Energy" class="nav-logo-img"/>
+        <span class="nav-logo-text">MGI <span style="color:var(--orange)">ENERGY</span></span>
+      </a>
+      <p class="footer-brand-desc">Your first partner in industrial maintenance and technical assistance — ensuring the reliability of your machinery with unparalleled expertise.</p>
+      <div class="footer-tagline">Our Goal. Your Trust.</div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Valve Repair</a></li><li><a href="#">Valve Testing</a></li>
+        <li><a href="#">Calibration</a></li><li><a href="#">Heat Exchangers</a></li>
+        <li><a href="#">Turbine Flushing</a></li><li><a href="#">Industrial Bolting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li><li><a href="#">Projects (Algeria)</a></li>
+        <li><a href="#">Projects (Abroad)</a></li><li><a href="#">Equipment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Locations</h5>
+      <div class="footer-address">
+        <strong>Algeria (Head Office)</strong>Zone Industrielle<br>Bouchaker RN°1, Laghouat
+        <strong>Libya (Branch)</strong>Quartier Assiyahia<br>Tripoli, Libya
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MGI Energy. All rights reserved.</span>
+    <span>Designed for excellence — <a href="#">mgi-energie.com</a></span>
+  </div>
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/213672106655" target="_blank" class="wa-float">
+  <div class="wa-btn">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+</a>
+
+<script>
+/* ── SCROLL REVEAL ── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => ro.observe(el));
+
+/* ════════════════════════════════════════════════
+   ANIMATED STATS CANVAS — hero right side
+   Draws orbiting rings + counter cards
+════════════════════════════════════════════════ */
+(function() {
+  const c = document.getElementById('statsCanvas');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  const DPR = Math.min(window.devicePixelRatio, 2);
+
+  function resize() {
+    const w = c.offsetWidth, h = c.offsetHeight;
+    c.width  = w * DPR;
+    c.height = h * DPR;
+    ctx.scale(DPR, DPR);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const stats = [
+    { label:'Founded',   value:2018, suffix:'',   angle:0 },
+    { label:'Employees', value:250,  suffix:'+',  angle:Math.PI/2 },
+    { label:'Services',  value:6,    suffix:'',   angle:Math.PI },
+    { label:'Countries', value:2,    suffix:'+',  angle:Math.PI*1.5 },
+  ];
+
+  const W = () => c.offsetWidth;
+  const H = () => c.offsetHeight;
+  let t = 0;
+  let counted = false;
+  const displayed = stats.map(s => ({ cur: 0, target: s.value }));
+
+  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function draw() {
+    const w = W(), h = H();
+    ctx.clearRect(0, 0, w, h);
+    const cx = w / 2, cy = h / 2;
+    const R = Math.min(w, h) * 0.36;
+
+    // Animate counters
+    if (!counted) {
+      displayed.forEach((d, i) => {
+        d.cur = Math.min(d.cur + stats[i].value / 80, stats[i].value);
+      });
+      if (displayed.every((d, i) => d.cur >= stats[i].value)) counted = true;
+    }
+
+    // Background glow
+    const bgGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 1.4);
+    bgGrad.addColorStop(0, 'rgba(21,101,192,0.12)');
+    bgGrad.addColorStop(1, 'rgba(4,29,58,0)');
+    ctx.fillStyle = bgGrad;
+    ctx.beginPath(); ctx.arc(cx, cy, R * 1.4, 0, Math.PI * 2); ctx.fill();
+
+    // Outer rotating ring
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(t * 0.2);
+    for (let i = 0; i < 16; i++) {
+      const a = (i / 16) * Math.PI * 2;
+      const x = Math.cos(a) * (R + 30), y = Math.sin(a) * (R + 30);
+      const alpha = 0.3 + Math.sin(t * 2 + i) * 0.2;
+      ctx.beginPath();
+      ctx.arc(x, y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(41,188,212,${alpha})`;
+      ctx.fill();
+    }
+    ctx.restore();
+
+    // Ring 1 — dashed orbit
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(t * 0.12);
+    ctx.beginPath();
+    ctx.arc(0, 0, R, 0, Math.PI * 2);
+    ctx.setLineDash([6, 12]);
+    ctx.strokeStyle = 'rgba(30,136,229,0.2)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.restore();
+
+    // Ring 2 — inner solid
+    ctx.beginPath();
+    ctx.arc(cx, cy, R * 0.55, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(244,120,32,0.15)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Center logo placeholder
+    const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 0.42);
+    grad.addColorStop(0, 'rgba(10,61,107,0.8)');
+    grad.addColorStop(1, 'rgba(4,29,58,0.4)');
+    ctx.beginPath();
+    ctx.arc(cx, cy, R * 0.42, 0, Math.PI * 2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(41,188,212,0.3)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Center text
+    ctx.font = `800 ${Math.floor(w * 0.06)}px "Barlow Condensed",sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const cGrad = ctx.createLinearGradient(cx, cy - 20, cx, cy + 20);
+    cGrad.addColorStop(0, '#FF9A45');
+    cGrad.addColorStop(1, '#F47820');
+    ctx.fillStyle = cGrad;
+    ctx.fillText('MGI', cx, cy - 8);
+    ctx.font = `300 ${Math.floor(w * 0.035)}px "Barlow",sans-serif`;
+    ctx.fillStyle = 'rgba(41,188,212,0.9)';
+    ctx.fillText('ENERGY', cx, cy + 16);
+
+    // Stat cards on orbit
+    stats.forEach((s, i) => {
+      const angle = s.angle + t * 0.35;
+      const x = cx + Math.cos(angle) * R;
+      const y = cy + Math.sin(angle) * R;
+
+      // Card background
+      const cw = 78, ch = 54;
+      ctx.save();
+      ctx.shadowColor = i % 2 === 0 ? '#F47820' : '#29BCD4';
+      ctx.shadowBlur = 16;
+      ctx.fillStyle = 'rgba(4,18,42,0.95)';
+      ctx.beginPath();
+      ctx.roundRect(x - cw/2, y - ch/2, cw, ch, 8);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.strokeStyle = i % 2 === 0 ? 'rgba(244,120,32,0.45)' : 'rgba(41,188,212,0.35)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.restore();
+
+      // Stat number
+      ctx.font = `800 ${Math.floor(w * 0.047)}px "Barlow Condensed",sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      const numGrad = ctx.createLinearGradient(x, y - 14, x, y + 2);
+      numGrad.addColorStop(0, i % 2 === 0 ? '#FF9A45' : '#5DE8FF');
+      numGrad.addColorStop(1, i % 2 === 0 ? '#F47820' : '#29BCD4');
+      ctx.fillStyle = numGrad;
+      const val = Math.floor(displayed[i].cur);
+      ctx.fillText(val + s.suffix, x, y - 6);
+
+      // Label
+      ctx.font = `500 ${Math.floor(w * 0.022)}px "Barlow",sans-serif`;
+      ctx.fillStyle = 'rgba(176,190,197,0.85)';
+      ctx.fillText(s.label.toUpperCase(), x, y + 13);
+    });
+
+    t += 0.016;
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+})();
+</script>
+
+<script>
+/* ── MOBILE NAV ── */
+(function() {
+  const btn = document.getElementById('navHamburger');
+  const overlay = document.getElementById('mobileNav');
+  if (!btn || !overlay) return;
+  btn.addEventListener('click', () => {
+    const open = overlay.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  overlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      overlay.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
